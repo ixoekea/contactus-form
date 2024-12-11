@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const lastName = document.getElementById("lastName").value.trim();
     const email = document.getElementById("eMail").value.trim();
     const message = document.getElementById("message").value.trim();
-    const consent = document.getElementById("consent").value.trim();
+    const consent = document.getElementById("consent");
     const radioInput = document.getElementsByName("queryType");
     const error = document.getElementById("error");
     error.innerHTML = "";
@@ -81,12 +81,12 @@ document.addEventListener("DOMContentLoaded", function () {
     //Checkbox Verification
     let consentValueStore = "";
     if (consent.checked) {
-      consentValueStore = "No";
-    } else {
       consentValueStore = "Yes";
+    } else {
+      consentValueStore = "No";
     }
 
-    if (consent.checked) {
+    if (!consent.checked) {
       const para = document.createElement("p");
       para.innerHTML = "Checkbox is required"; //DOM creates <p> in red text
       para.style.color = "red";
@@ -98,11 +98,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //Submit Form Everything is verified
 
+    //Form Data collection
+    const emailResult = $(" #eMail").val();
+    const messageinputresult = $("#message").val();
+    const consentResult = consent.checked ? "Yes" : "No";
     if (!hasError) {
-      alert(
-        `Hello ${firstName} ${lastName}, Your form is submitted.\n\nForm Summary:\nE-mail: ${email}\nRequired Query: ${radioValueStore}\nMessage: ${message}\nConfirmation: ${consentValueStore}`
-      );
-      form.submit();
+      form.reset();
+      var alertMessage = `Hello ${firstName} ${lastName}, Your form is submitted.`;
+      $("#alert .messageresult").text(alertMessage); // Set the message
+      $("#alert .emailresult").text(emailResult); // Set the email
+      $("#alert .enquiryresult").text(radioValueStore);
+      $("#alert .messagetextresult").text(messageinputresult);
+      $("#alert .consentresult").text(consentResult);
+      $("#alert").show(); // Show the custom modal
+      $("#closeModal").click(function () {
+        $("#myForm")[0].submit();
+      });
     }
   });
 });

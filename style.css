@@ -108,7 +108,6 @@ input:hover,
   border-radius: 5px;
   justify-items: start;
 }
-
 /*Checkbox*/
 .checkbox-container {
   display: grid;
@@ -121,4 +120,68 @@ input:hover,
   .row {
     grid-template-columns: 1fr;
   }
+
+  #alert .email-row,
+  #alert .enquiry-row,
+  #alert .message-row,
+  #alert .consent-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  #alert {
+    max-width: 100px;
+  }
+}
+
+/*FontType*/
+
+@font-face {
+  font-family: "Karla";
+  src: url("fonts/Karla-Regular.ttf") format("truetype");
+}
+
+/*Custom Alert*/
+#alert {
+  display: none;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(48, 50, 48, 0.87);
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 400px;
+  width: 50%;
+}
+#alert .message {
+  font-weight: bold;
+}
+
+.close-button {
+  display: flex;
+  justify-content: center;
+}
+
+#alert button {
+  background-color: var(--primary-color);
+  color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+#alert .messageresult {
+  font-weight: bold;
+}
+#alert .email-row,
+#alert .enquiry-row,
+#alert .message-row,
+#alert .consent-row {
+  display: flex;
+  align-items: center;
+}
+#alert p {
+  margin-right: 10px;
 }
