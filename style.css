@@ -1,0 +1,124 @@
+:root {
+  --background-color: hsl(148, 38%, 91%);
+  --primary-color: hsl(169, 82%, 27%);
+  --border-color: 1px solid grey;
+}
+
+* {
+  box-sizing: border-box;
+}
+/*body background styling*/
+body {
+  background-color: var(--background-color);
+  font-size: 16px;
+  font-family: "Karla", sans-serif;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: 10px;
+}
+
+/*Content*/
+.content-container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: auto;
+}
+h2 {
+  padding: 10px 0px;
+}
+
+input,
+#message {
+  border-radius: 5px;
+  border: var(--border-color);
+  padding: 10px;
+}
+
+input,
+#message {
+  transition: 0.3s ease-in;
+}
+input:hover,
+#message:hover,
+.radio-button:hover {
+  border: 2px solid var(--primary-color);
+}
+.label {
+  display: inline-block;
+}
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: center;
+}
+.col {
+  display: grid;
+  grid-template-rows: 1fr;
+}
+/*Submit Button*/
+#button {
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+#button:hover {
+  background-color: var(--background-color);
+  color: black;
+  cursor: pointer;
+}
+
+/*Radio buttons*/
+.radio-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  align-items: center;
+  border: var(--border-color);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.radio-input {
+  margin-right: 10px;
+}
+.radio-input:hover,
+#consent:hover {
+  cursor: pointer;
+}
+
+.radio-button {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  padding: 5px 10px;
+  border: var(--border-color);
+  border-radius: 5px;
+  justify-items: start;
+}
+
+/*Checkbox*/
+.checkbox-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+
+/*Media for small screens 375pixels*/
+@media (max-width: 375px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}

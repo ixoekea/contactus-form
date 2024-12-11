@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Contact Us Form" />
+    <meta name="author" content="Tyler Kinsey" />
+    <meta property="og:title" content="Contact Us Form" />
+    <meta property="og:description" content="Contact Us Form" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Contact Us - Form</title>
+  </head>
+  <body>
+    <div class="content">
+      <div class="content-container">
+        <h2 class="row">Contact Us</h2>
+        <div id="error"></div>
+        <form>
+          <div class="row">
+            <div class="col">
+              <label for="firstName"
+                >First Name <span id="requiredFirstname">*</span></label
+              >
+              <input type="text" id="firstName" name="firstname" />
+            </div>
+            <div class="col">
+              <label for="lastName"
+                >Last Name <span id="requiredLastname">*</span></label
+              >
+              <input type="text" id="lastName" name="lastname" />
+            </div>
+          </div>
+          <div class="col">
+            <label for="eMail"
+              >Email Address <span id="requiredEmail">*</span></label
+            >
+            <input type="email" id="eMail" name="email" class="row" />
+          </div>
+          <div class="col">
+            <label for="queryType"
+              >Query Type <span id="requiredQuery">*</span></label
+            >
+          </div>
+          <div class="row">
+            <div class="radio-button">
+              <input
+                type="radio"
+                id="generalEnquiry"
+                name="queryType"
+                value="General"
+                class="radio-input"
+              />
+              <label for="generalEnquiry">General Enquiry </label>
+            </div>
+            <div class="radio-button">
+              <input
+                type="radio"
+                id="supportRequest"
+                name="queryType"
+                value="Support"
+                class="radio-input"
+              />
+              <label for="supportRequest">Support Request</label>
+            </div>
+          </div>
+          <div class="col">
+            <label for="message"
+              >Message <span id="requiredMessage">*</span></label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              class="col"
+            ></textarea>
+          </div>
+          <div class="checkbox-container">
+            <input type="checkbox" id="consent" value="Consent" />
+            <label for="consent"
+              >I consent to being contacted by the team
+              <span id="requiredConsent">*</span></label
+            >
+          </div>
+          <button id="button" class="row" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
